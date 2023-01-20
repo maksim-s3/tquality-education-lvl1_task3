@@ -1,0 +1,48 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Framework. Selenium WebDriver. Tools QA" verbose="1">
+    <test name="Test case 1. Alerts">
+        <parameter name="textSimpleAlert" value="You clicked a button"></parameter>
+        <parameter name="textConfirmAlert" value="Do you confirm action?"></parameter>
+        <parameter name="textResultConfirmAlert" value="You selected Ok"></parameter>
+        <parameter name="textPromptAlert" value="Please enter your name"></parameter>
+        <classes>
+            <class name="test_cases.TestCase1"/>
+        </classes>
+    </test>
+    <test name="Test case 2. Iframe" enabled="false">
+        <parameter name="textFromParentFrame" value="Parent frame"></parameter>
+        <parameter name="textFromChildFrame" value="Child Iframe"></parameter>
+        <classes>
+            <class name="test_cases.TestCase2"/>
+        </classes>
+    </test>
+    <test name="Test case 3. Tables" enabled="false">
+        <classes>
+            <class name="test_cases.TestCase3"/>
+        </classes>
+    </test>
+    <test name="Test case 4. Handles" enabled="false">
+        <parameter name="sampleUrl" value="/sample"></parameter>
+        <classes>
+            <class name="test_cases.TestCase4"/>
+        </classes>
+    </test>
+    <test name="Test case 5. Slider, Progress bar" enabled="false">
+        <parameter name="age" value="29"></parameter>
+        <parameter name="ageErrorRate" value="2"></parameter>
+        <classes>
+            <class name="test_cases.TestCase5"/>
+        </classes>
+    </test>
+    <test name="Test case 6. Date picker" enabled="false">
+        <classes>
+            <class name="test_cases.TestCase6"/>
+        </classes>
+    </test>
+    <test name="Test case 7. Files. Uploading and downloading" enabled="false">
+        <classes>
+            <class name="test_cases.TestCase7"/>
+        </classes>
+    </test>
+</suite>

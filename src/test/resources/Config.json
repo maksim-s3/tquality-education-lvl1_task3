@@ -1,0 +1,10 @@
+{
+  "BaseUrl":"https://demoqa.com/",
+  "browser": "chrome",
+  "incognito":false,
+  "language": "en-US",
+  "full_screen": true,
+  "explicit_wait_time": 10,
+  "sleep_in_millis": 100,
+  "pageLoadTimeout": 5
+}
