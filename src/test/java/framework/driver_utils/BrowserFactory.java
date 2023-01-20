@@ -9,6 +9,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +22,12 @@ public enum BrowserFactory {
         public WebDriver create() {
             Logger.info("BrowserFactory: инициализация драйвера для браузера Chrome");
             WebDriverManager.chromedriver().setup();
-            WebDriver driver = new ChromeDriver(getChromeOptions());
+            WebDriver driver = null;
+            try {
+                driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), getChromeOptions());
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
             return CHROME.manage(driver);
         }
 
