@@ -4,6 +4,8 @@ import framework.logger.Logger;
 import framework.utils.FileUtil;
 import org.openqa.selenium.WebDriver;
 import framework.utils.ConfigManager;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 public class Driver {
     private static Driver instance = null;
@@ -14,8 +16,8 @@ public class Driver {
     }
 
     private static void createDriver() {
-        Logger.info("Driver: создание драйвера браузера заданного в конфигурации");
-        switch (ConfigManager.getBrowserName().toUpperCase()) {
+        Logger.info("Driver: создание драйвера браузера заданного в pipeline");
+        switch (System.getenv("BROWSER").toUpperCase()) {
             case "CHROME":
                 driver = BrowserFactory.CHROME.create();
                 break;
@@ -24,7 +26,7 @@ public class Driver {
                 driver = BrowserFactory.FIREFOX.create();
                 break;
             default:
-                new RuntimeException("Неправильное имя браузера: " + ConfigManager.getBrowserName());
+                new RuntimeException("Неправильное имя браузера: " + System.getenv("BROWSER").toUpperCase());
                 break;
         }
         driver.get(ConfigManager.getURL());

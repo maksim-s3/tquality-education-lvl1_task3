@@ -32,7 +32,7 @@ public enum BrowserFactory {
             if (ConfigManager.getIsIncognito()) {
                 chromeOptions.addArguments("--incognito");
             }
-            chromeOptions.addArguments(String.format("lang=%s", ConfigManager.getBrowserLang()));
+            chromeOptions.addArguments(BrowserFactory.getLangBrowser());
             Map<String, Object> prefs = new HashMap<String, Object>();
             prefs.put("download.default_directory", FileUtil.DOWNLOAD_DIRECTORY);
             prefs.put("download.prompt_for_download", false);
@@ -58,7 +58,7 @@ public enum BrowserFactory {
             if (ConfigManager.getIsIncognito()) {
                 firefoxOptions.addArguments("-private");
             }
-            firefoxOptions.addArguments(String.format("lang=%s", ConfigManager.getBrowserLang()));
+            firefoxOptions.addArguments(BrowserFactory.getLangBrowser());
             firefoxOptions.addPreference("browser.download.folderList", 2);
             firefoxOptions.addPreference("browser.download.manager.showWhenStarting", "False");
             firefoxOptions.addPreference("browser.download.dir", FileUtil.DOWNLOAD_DIRECTORY);
@@ -79,5 +79,9 @@ public enum BrowserFactory {
         }
         driver.manage().timeouts().pageLoadTimeout(ConfigManager.getPageLoadTimeout(), TimeUnit.SECONDS);
         return driver;
+    }
+
+    private static String getLangBrowser(){
+        return String.format("lang=%s", System.getenv("LANGUAGE_BROWSER"));
     }
 }
