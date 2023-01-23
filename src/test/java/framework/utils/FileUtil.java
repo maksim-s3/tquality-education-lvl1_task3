@@ -58,13 +58,4 @@ public class FileUtil {
         }
         return chosenFile;
     }
-
-    public static File getFile(String path) {
-        File file = new File(path);
-        if (file.isFile()) {
-            return file;
-        } else {
-            throw new FileSystemNotFoundException("файла " + path + " не существует");
-        }
-    }
 }

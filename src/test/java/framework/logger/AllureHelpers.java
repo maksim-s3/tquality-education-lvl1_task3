@@ -7,7 +7,11 @@ import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class AllureHelpers {
     private static final String LOG_FILE = "target/log/log_tests.log";
@@ -50,8 +54,13 @@ public class AllureHelpers {
 
     @SuppressWarnings("UnusedReturnValue")
     @Attachment(value = "Log", type = "text/html", fileExtension = ".log")
-    public static String takeLogFile() {
-        return FileUtil.getFile(LOG_FILE).toString();
+    public static byte[] takeLogFile() {
+        try {
+            return Files.readAllBytes(Paths.get(LOG_FILE));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static byte[] getPageSourceBytes() {
