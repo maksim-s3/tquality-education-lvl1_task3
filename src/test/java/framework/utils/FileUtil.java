@@ -1,6 +1,7 @@
 package framework.utils;
 
 import framework.logger.Logger;
+
 import java.io.File;
 import java.nio.file.FileSystemNotFoundException;
 
@@ -56,5 +57,14 @@ public class FileUtil {
             throw new FileSystemNotFoundException("Каталог " + DOWNLOAD_DIRECTORY + " пуст");
         }
         return chosenFile;
+    }
+
+    public static File getFile(String path) {
+        File file = new File(path);
+        if (file.isFile()) {
+            return file;
+        } else {
+            throw new FileSystemNotFoundException("файла " + path + " не существует");
+        }
     }
 }

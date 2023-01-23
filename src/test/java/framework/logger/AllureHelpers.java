@@ -1,14 +1,17 @@
 package framework.logger;
 
 import framework.driver_utils.Driver;
+import framework.utils.FileUtil;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
-
 import java.nio.charset.StandardCharsets;
 
 public class AllureHelpers {
+    private static final String LOG_FILE = "target/log/log_tests.log";
+
     @SuppressWarnings("UnusedReturnValue")
     @Attachment(value = "AllureTextReport", type = "text/plain", fileExtension = ".txt")
     public static String attachText(final String text) {
@@ -43,6 +46,12 @@ public class AllureHelpers {
     @Attachment(value = "Element screenshot", type = "image/png", fileExtension = ".png")
     public static byte[] takeScreenshot(final WebElement elem) {
         return getScreenshotBytes(elem);
+    }
+
+    @SuppressWarnings("UnusedReturnValue")
+    @Attachment(value = "Log", type = "text/html", fileExtension = ".log")
+    public static String takeLogFile() {
+        return FileUtil.getFile(LOG_FILE).toString();
     }
 
     public static byte[] getPageSourceBytes() {

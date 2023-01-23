@@ -16,10 +16,14 @@ public class Logger {
     }
 
     public static void info(String message){
-        Logger.getInstance().info(message);
+        getInstance().info(message);
     }
 
     public static void debug(String message){
-        Logger.getInstance().debug(message);
+        getInstance().debug(message);
+    }
+
+    public static void attachLog() {
+
     }
 }
