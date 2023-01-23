@@ -18,12 +18,8 @@
             <param name="ConversionPattern" value="%p %c: %m%n" />
         </layout>
     </appender>
-    <category name="test_cases">
-        <priority value="INFO"/>
-        <appender-ref ref="console"/>
-    </category>
-    <category name="test_cases">
-        <priority value="ALL"/>
-        <appender-ref ref="file"/>
-    </category>
+    <root>
+        <level value="DEBUG" />
+        <appender-ref ref="file" />
+    </root>
 </log4j:configuration>
