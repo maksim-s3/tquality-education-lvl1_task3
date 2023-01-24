@@ -1,6 +1,6 @@
 package framework.utils;
 
-import framework.logger.Logger;
+import framework.logger.Log;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -15,7 +15,7 @@ public class JsonLoader {
     public static JSONObject load(String fileName) {
         JSONObject jsonObject;
         File file = new File(String.format(RESOURCES_PATH, fileName));
-        Logger.info(String.format("JsonLoader: парсинг файла %s", file.getPath()));
+        Log.info(String.format("JsonLoader: парсинг файла %s", file.getPath()));
         Object o = null;
         try {
             try {

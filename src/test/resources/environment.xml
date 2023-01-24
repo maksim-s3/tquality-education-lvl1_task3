@@ -1,0 +1,14 @@
+<environment>
+    <parameter>
+        <key>Browser</key>
+        <value>Browser</value>
+    </parameter>
+    <parameter>
+        <key>Browser language</key>
+        <value>Browser language</value>
+    </parameter>
+    <parameter>
+        <key>Log level</key>
+        <value>Log level</value>
+    </parameter>
+</environment>

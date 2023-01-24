@@ -1,11 +1,11 @@
 package framework.base;
 
-import framework.logger.AllureScreenShooter;
+import framework.logger.Listener;
 import org.testng.annotations.AfterMethod;
 import framework.driver_utils.Driver;
 import org.testng.annotations.Listeners;
 
-@Listeners(AllureScreenShooter.class)
+@Listeners(Listener.class)
 public abstract class BaseTest {
 
     @AfterMethod

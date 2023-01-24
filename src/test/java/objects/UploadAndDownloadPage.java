@@ -4,7 +4,7 @@ import framework.base.BaseForm;
 import framework.base.elements.Button;
 import framework.base.elements.InputField;
 import framework.base.elements.Text;
-import framework.logger.Logger;
+import framework.logger.Log;
 import org.openqa.selenium.By;
 
 public class UploadAndDownloadPage extends BaseForm {
@@ -18,18 +18,18 @@ public class UploadAndDownloadPage extends BaseForm {
     }
 
     public void clickButtonDownload(){
-        Logger.info(getClass().getSimpleName()+": Клик по кнопке Download");
+        Log.info(getClass().getSimpleName()+": Клик по кнопке Download");
         downloadButton.waitVisibilityOfElementLocated();
         downloadButton.click();
     }
 
     public void setPathToFile(String pathToFile){
-        Logger.info(getClass().getSimpleName()+": Ввести локальный путь к загружаемому файлу");
+        Log.info(getClass().getSimpleName()+": Ввести локальный путь к загружаемому файлу");
         selectFile.setValue(pathToFile);
     }
 
     public String getUploadedFilePath(){
-        Logger.info(getClass().getSimpleName()+": Получить путь к загруженому файлу из формы");
+        Log.info(getClass().getSimpleName()+": Получить путь к загруженому файлу из формы");
         uploadedFilePath.waitVisibilityOfElementLocated();
         return uploadedFilePath.getText();
     }

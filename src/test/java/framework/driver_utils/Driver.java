@@ -1,11 +1,9 @@
 package framework.driver_utils;
 
-import framework.logger.Logger;
+import framework.logger.Log;
 import framework.utils.FileUtil;
 import org.openqa.selenium.WebDriver;
 import framework.utils.ConfigManager;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
 
 public class Driver {
     private static Driver instance = null;
@@ -16,7 +14,7 @@ public class Driver {
     }
 
     private static void createDriver() {
-        Logger.info("Driver: создание драйвера браузера заданного в pipeline");
+        Log.info("Driver: создание драйвера браузера заданного в pipeline");
         switch (System.getenv("BROWSER").toUpperCase()) {
             case "CHROME":
                 driver = BrowserFactory.CHROME.create();
@@ -33,7 +31,7 @@ public class Driver {
     }
 
     public static WebDriver getInstance() {
-        Logger.info("Driver: получить WebDriver");
+        Log.info("Driver: получить WebDriver");
         if (instance == null) {
             instance = new Driver();
         }
@@ -41,7 +39,7 @@ public class Driver {
     }
 
     public static void quit() {
-        Logger.info("Driver: закрытие браузера, удаление драйвера, удаление временного каталога");
+        Log.info("Driver: закрытие браузера, удаление драйвера, удаление временного каталога");
         driver.quit();
         driver = null;
         instance = null;

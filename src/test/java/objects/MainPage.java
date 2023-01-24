@@ -3,7 +3,7 @@ package objects;
 import enums.Category;
 import framework.base.BaseForm;
 import framework.base.elements.Button;
-import framework.logger.Logger;
+import framework.logger.Log;
 import org.openqa.selenium.By;
 
 public class MainPage extends BaseForm {
@@ -15,7 +15,7 @@ public class MainPage extends BaseForm {
     }
 
     public void clickOnCategory(Category category){
-        Logger.info(getClass().getSimpleName()+": Клик по категории: "+category.getTitle());
+        Log.info(getClass().getSimpleName()+": Клик по категории: "+category.getTitle());
         Button button = new Button(By.xpath(String.format(exampleCategory, category.getTitle())), "Кнопка категории "+category.getTitle());
         button.click();
     }

@@ -3,7 +3,7 @@ package objects;
 import framework.base.BaseForm;
 import framework.base.elements.Button;
 import framework.base.elements.Text;
-import framework.logger.Logger;
+import framework.logger.Log;
 import framework.utils.StringUtil;
 import org.openqa.selenium.By;
 
@@ -18,13 +18,13 @@ public class ProgressBarPage extends BaseForm {
     }
 
     public void clickButtonStartStop(){
-        Logger.info(getClass().getSimpleName()+": Клик по кнопке start/stop на форме прогресс бара");
+        Log.info(getClass().getSimpleName()+": Клик по кнопке start/stop на форме прогресс бара");
         buttonStartStop.scroll();
         buttonStartStop.click();
     }
 
     public void stopAfterReachingValue(int value){
-        Logger.info(getClass().getSimpleName()+": Клик по кнопке stop когда наберется "+ value+"%");
+        Log.info(getClass().getSimpleName()+": Клик по кнопке stop когда наберется "+ value+"%");
         progressBarValue.scroll();
         Text expectedCondition = new Text(By.xpath(String.format(exampleExpectedConditionValue, value)),
                 "% заполнения прогресс бара");

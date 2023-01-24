@@ -1,7 +1,7 @@
 package framework.base.elements;
 
 import framework.base.BaseElement;
-import framework.logger.Logger;
+import framework.logger.Log;
 import framework.utils.ActionUtil;
 import org.openqa.selenium.By;
 
@@ -14,12 +14,12 @@ public class Slider extends BaseElement {
     }
 
     public int getPosition(){
-        Logger.debug(getClass().getSimpleName() + ": Получить фактическую позицию слайдера");
+        Log.debug(getClass().getSimpleName() + ": Получить фактическую позицию слайдера");
         return Integer.parseInt(positionValue.getAttribute("value"));
     }
 
     public void setPosition(int value) {
-        Logger.debug(getClass().getSimpleName() + ": Установить позицию " + value + "% для слайдера");
+        Log.debug(getClass().getSimpleName() + ": Установить позицию " + value + "% для слайдера");
         while (value != getPosition()) {
             if (value < getPosition()) {
                 moveLeft();
@@ -30,12 +30,12 @@ public class Slider extends BaseElement {
     }
 
     private void moveRight() {
-        Logger.debug(getClass().getSimpleName()+": Сдвинуть слайдер вправо");
+        Log.debug(getClass().getSimpleName()+": Сдвинуть слайдер вправо");
         ActionUtil.moveRight();
     }
 
     private void moveLeft() {
-        Logger.debug(getClass().getSimpleName()+": Сдвинуть слайдер влево");
+        Log.debug(getClass().getSimpleName()+": Сдвинуть слайдер влево");
         ActionUtil.moveLeft();
     }
 }

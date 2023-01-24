@@ -3,7 +3,7 @@ package test_cases;
 import enums.Category;
 import enums.LeftAccordionListItem;
 import framework.base.BaseTest;
-import framework.logger.Logger;
+import framework.logger.Log;
 import framework.utils.DateUtil;
 import objects.DatePickerPage;
 import objects.MainPage;
@@ -19,11 +19,11 @@ public class TestCase6 extends BaseTest {
 
     @Test
     public void test() {
-        Logger.info("Test Case 6: Шаг 1. Перейти на главную страницу");
+        Log.info("Test Case 6: Шаг 1. Перейти на главную страницу");
         MainPage mainPage = new MainPage();
         Assert.assertTrue(mainPage.isPageOpen(), "Main page is not open");
 
-        Logger.info("Test Case 6: Шаг 2. Кликнуть на кнопку Widgets. На открывшейся странице в левом меню кликнуть пункт Date Picker");
+        Log.info("Test Case 6: Шаг 2. Кликнуть на кнопку Widgets. На открывшейся странице в левом меню кликнуть пункт Date Picker");
         mainPage.clickOnCategory(Category.WIDGETS);
         LeftAccordion leftAccordion = new LeftAccordion();
         leftAccordion.clickItemSubMenu(LeftAccordionListItem.DATE_PICKER);
@@ -37,6 +37,6 @@ public class TestCase6 extends BaseTest {
         Assert.assertEquals(dateAndTime, datePickerPage.getDateAndTimeFromTemplate(TEMPLATE_DATE_AND_TIME),
                 "Date And Time does not match the current date");
 
-        Logger.info("Test Case 6: Шаг 3. Используя окно выбора даты, в поле Date Picker задать дату ближайшего 29 февраля");
+        Log.info("Test Case 6: Шаг 3. Используя окно выбора даты, в поле Date Picker задать дату ближайшего 29 февраля");
     }
 }

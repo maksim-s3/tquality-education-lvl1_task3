@@ -10,7 +10,7 @@
             <class name="test_cases.TestCase1"/>
         </classes>
     </test>
-    <test name="Test case 2. Iframe" enabled="false">
+    <test name="Test case 2. Iframe">
         <parameter name="textFromParentFrame" value="Parent frame"></parameter>
         <parameter name="textFromChildFrame" value="Child Iframe"></parameter>
         <classes>

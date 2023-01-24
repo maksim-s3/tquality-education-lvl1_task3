@@ -3,7 +3,7 @@ package objects;
 import enums.LinksForm;
 import framework.base.BaseForm;
 import framework.base.elements.Link;
-import framework.logger.Logger;
+import framework.logger.Log;
 import org.openqa.selenium.By;
 
 public class LinksPage extends BaseForm {
@@ -15,7 +15,7 @@ public class LinksPage extends BaseForm {
     }
 
     public void clickLink(LinksForm textLink){
-        Logger.info(getClass().getSimpleName()+": Клик по ссылке: "+textLink.getTitle());
+        Log.info(getClass().getSimpleName()+": Клик по ссылке: "+textLink.getTitle());
         Link link = new Link(By.xpath(String.format(exampleLink, textLink.getTitle())), String.format("Ссылка %s на странице Links", textLink));
         link.click();
     }

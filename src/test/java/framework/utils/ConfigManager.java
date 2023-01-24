@@ -5,14 +5,6 @@ import org.json.simple.JSONObject;
 public class ConfigManager {
     private static JSONObject config = JsonLoader.load("Config");
 
-    public static String getBrowserName() {
-        return (String) config.get("browser");
-    }
-
-    public static String getBrowserLang() {
-        return (String) config.get("language");
-    }
-
     public static boolean getIsIncognito() {
         return (boolean) config.get("incognito");
     }

@@ -1,6 +1,7 @@
 package framework.utils;
 
-import framework.logger.Logger;
+import framework.logger.Log;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,7 +11,7 @@ public class DateUtil {
     private static SimpleDateFormat formatter = null;
 
     public static Date getDate(String template){
-        Logger.info("DateUtil: Получить текущую дату и время по шаблону");
+        Log.info("DateUtil: Получить текущую дату и время по шаблону");
         formatter = new SimpleDateFormat(template, Locale.ENGLISH);
         Date date = null;
         try {
@@ -22,7 +23,7 @@ public class DateUtil {
     }
 
     public static Date getDateFromString(String template, String string){
-        Logger.info("DateUtil: Получить дату и время из строки по шаблону");
+        Log.info("DateUtil: Получить дату и время из строки по шаблону");
         formatter = new SimpleDateFormat(template, Locale.ENGLISH);
         Date date = null;
         try {

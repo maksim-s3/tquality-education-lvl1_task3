@@ -2,7 +2,7 @@ package objects;
 
 import framework.base.BaseForm;
 import framework.base.elements.Slider;
-import framework.logger.Logger;
+import framework.logger.Log;
 import org.openqa.selenium.By;
 
 public class SliderPage extends BaseForm {
@@ -15,14 +15,14 @@ public class SliderPage extends BaseForm {
     }
 
     public void setPositionSlider(int value) {
-        Logger.info(getClass().getSimpleName() + ": Установить значение: " + value + " для слайдера");
+        Log.info(getClass().getSimpleName() + ": Установить значение: " + value + " для слайдера");
         slider.scroll();
         slider.click();
         slider.setPosition(value);
     }
 
     public int getPositionSlider() {
-        Logger.info(getClass().getSimpleName() + ": Получить положение слайдера");
+        Log.info(getClass().getSimpleName() + ": Получить положение слайдера");
         return slider.getPosition();
     }
 }

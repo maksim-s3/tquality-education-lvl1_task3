@@ -2,7 +2,7 @@ package objects;
 
 import framework.base.BaseForm;
 import framework.base.elements.Button;
-import framework.logger.Logger;
+import framework.logger.Log;
 import models.User;
 import objects.custom_elements.WebTableUsers;
 import org.openqa.selenium.By;
@@ -18,22 +18,22 @@ public class WebTablesPage extends BaseForm {
     }
 
     public void clickButtonAddNewRecord(){
-        Logger.info(getClass().getSimpleName()+": Клик по кнопке Add на форме");
+        Log.info(getClass().getSimpleName()+": Клик по кнопке Add на форме");
         buttonAdd.scroll();
         buttonAdd.click();
     }
 
     public boolean isUserInTable(User user) {
-        Logger.info(getClass().getSimpleName()+": Поиск User в таблице");
+        Log.info(getClass().getSimpleName()+": Поиск User в таблице");
         return webTableUsers.isUserInTable(user);
     }
 
     public int getNumberOfRecords(){
-        Logger.info(getClass().getSimpleName()+": Получить количество непустых записей в таблице");
+        Log.info(getClass().getSimpleName()+": Получить количество непустых записей в таблице");
         return webTableUsers.getNumberOfUsers();
     }
     public void deleteUserFromTable(User user){
-        Logger.info(getClass().getSimpleName()+": Удалить User из таблицы");
+        Log.info(getClass().getSimpleName()+": Удалить User из таблицы");
         webTableUsers.deleteUser(user);
     }
 }

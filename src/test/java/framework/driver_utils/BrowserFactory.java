@@ -1,6 +1,6 @@
 package framework.driver_utils;
 
-import framework.logger.Logger;
+import framework.logger.Log;
 import framework.utils.ConfigManager;
 import framework.utils.FileUtil;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public enum BrowserFactory {
     CHROME{
         public WebDriver create() {
-            Logger.info("BrowserFactory: инициализация драйвера для браузера Chrome");
+            Log.info("BrowserFactory: инициализация драйвера для браузера Chrome");
             WebDriver driver = null;
             try {
                 driver = new RemoteWebDriver(new URL(URL_WD_HUB), getChromeOptions());
@@ -27,7 +27,7 @@ public enum BrowserFactory {
         }
 
         public ChromeOptions getChromeOptions() {
-            Logger.info("BrowserFactory: конфигурация браузера Chrome");
+            Log.info("BrowserFactory: конфигурация браузера Chrome");
             ChromeOptions chromeOptions = new ChromeOptions();
             if (ConfigManager.getIsIncognito()) {
                 chromeOptions.addArguments("--incognito");
@@ -42,7 +42,7 @@ public enum BrowserFactory {
     },
     FIREFOX{
         public WebDriver create() {
-            Logger.info("BrowserFactory: инициализация драйвера для браузера Firefox");
+            Log.info("BrowserFactory: инициализация драйвера для браузера Firefox");
             WebDriver driver = null;
             try {
                 driver = new RemoteWebDriver(new URL(URL_WD_HUB), getFirefoxOptions());
@@ -53,7 +53,7 @@ public enum BrowserFactory {
         }
 
         public FirefoxOptions getFirefoxOptions() {
-            Logger.info("BrowserFactory: конфигурация браузера Firefox");
+            Log.info("BrowserFactory: конфигурация браузера Firefox");
             FirefoxOptions firefoxOptions = new FirefoxOptions();
             if (ConfigManager.getIsIncognito()) {
                 firefoxOptions.addArguments("-private");

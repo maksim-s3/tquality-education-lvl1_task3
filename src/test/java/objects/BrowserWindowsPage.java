@@ -2,7 +2,7 @@ package objects;
 
 import framework.base.BaseForm;
 import framework.base.elements.Button;
-import framework.logger.Logger;
+import framework.logger.Log;
 import org.openqa.selenium.By;
 
 public class BrowserWindowsPage extends BaseForm {
@@ -14,7 +14,7 @@ public class BrowserWindowsPage extends BaseForm {
     }
 
     public void clickButtonNewTab(){
-        Logger.info(getClass().getSimpleName()+": Клик по кнопке New Tab");
+        Log.info(getClass().getSimpleName()+": Клик по кнопке New Tab");
         buttonNewTab.scroll();
         buttonNewTab.click();
     }

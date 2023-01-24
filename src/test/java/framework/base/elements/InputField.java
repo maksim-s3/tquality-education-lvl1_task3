@@ -1,7 +1,7 @@
 package framework.base.elements;
 
 import framework.base.BaseElement;
-import framework.logger.Logger;
+import framework.logger.Log;
 import org.openqa.selenium.By;
 
 public class InputField extends BaseElement {
@@ -10,7 +10,7 @@ public class InputField extends BaseElement {
     }
 
     public void setValue(String text){
-        Logger.debug(String.format("InputField: ввести текст \"%s\" в input: %s", text, descriptionElement));
+        Log.debug(String.format("InputField: ввести текст \"%s\" в input: %s", text, descriptionElement));
         getElement().sendKeys(text);
     }
 }
