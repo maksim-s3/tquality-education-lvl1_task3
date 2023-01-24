@@ -14,7 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class AllureHelpers {
-    private static final String LOG_FILE = "target/log/log_tests.log";
+    private static final String LOG_FILE = "target/log/tests.log";
 
     @SuppressWarnings("UnusedReturnValue")
     @Attachment(value = "AllureTextReport", type = "text/plain", fileExtension = ".txt")

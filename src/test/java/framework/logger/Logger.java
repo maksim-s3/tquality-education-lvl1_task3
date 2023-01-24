@@ -22,8 +22,4 @@ public class Logger {
     public static void debug(String message){
         getInstance().debug(message);
     }
-
-    public static void attachLog() {
-
-    }
 }
