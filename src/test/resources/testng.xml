@@ -17,30 +17,30 @@
             <class name="test_cases.TestCase2"/>
         </classes>
     </test>
-    <test name="Test case 3. Tables" enabled="false">
+    <test name="Test case 3. Tables">
         <classes>
             <class name="test_cases.TestCase3"/>
         </classes>
     </test>
-    <test name="Test case 4. Handles" enabled="false">
+    <test name="Test case 4. Handles">
         <parameter name="sampleUrl" value="/sample"></parameter>
         <classes>
             <class name="test_cases.TestCase4"/>
         </classes>
     </test>
-    <test name="Test case 5. Slider, Progress bar" enabled="false">
+    <test name="Test case 5. Slider, Progress bar">
         <parameter name="age" value="29"></parameter>
         <parameter name="ageErrorRate" value="2"></parameter>
         <classes>
             <class name="test_cases.TestCase5"/>
         </classes>
     </test>
-    <test name="Test case 6. Date picker" enabled="false">
+    <test name="Test case 6. Date picker">
         <classes>
             <class name="test_cases.TestCase6"/>
         </classes>
     </test>
-    <test name="Test case 7. Files. Uploading and downloading" enabled="false">
+    <test name="Test case 7. Files. Uploading and downloading">
         <classes>
             <class name="test_cases.TestCase7"/>
         </classes>
